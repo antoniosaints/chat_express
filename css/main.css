@@ -1,0 +1,7 @@
+/* Importe o CSS do Tailwind */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Adicione personalizações CSS adicionais aqui */
+/* .minha-classe { propriedades CSS personalizadas; } */

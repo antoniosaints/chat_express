@@ -1,0 +1,36 @@
+{
+  "chats": [
+    {
+      "id": 1,
+      "name": "Grupo Geral",
+      "isGroup": true,
+      "profile": "wppconect.png",
+      "users": []
+    },
+    {
+      "id": 2,
+      "name": "CHAT - Geral 2",
+      "isGroup": true,
+      "profile": "cas.jpeg",
+      "users": []
+    }
+  ],
+  "messages": [
+    {
+      "chat_id": "1",
+      "text": "Bom dia",
+      "nome": "ANTONIO COSTA DOS SANTOS",
+      "user": 87,
+      "data": "25/10/2023, 09:26:31",
+      "id": 1
+    }
+  ],
+  "chats_user": [
+    {
+      "user_id": 87,
+      "chats": [
+        1
+      ]
+    }
+  ]
+}

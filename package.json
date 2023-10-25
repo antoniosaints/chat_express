@@ -1,0 +1,20 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/app.js",
+    "db": "json-server --watch src/db.json"
+  },
+  "author": "Antonio",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mysql2": "^3.6.2",
+    "socket.io": "^4.7.2",
+    "tailwindcss": "^3.3.3"
+  }
+}
