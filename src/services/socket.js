@@ -5,7 +5,6 @@ import { addNewMessage } from "../handlers/messageHandler.js";
 const socket = io(HOST_WS);
 
 socket.on("message", (msg) => {
-  console.log(JSON.parse(msg));
   addNewMessage(msg);
 });
 

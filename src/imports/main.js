@@ -9,10 +9,12 @@ const rightContainer = document.getElementById("list_right_container_chat");
 const chatNameGroup = document.getElementById("chat_name_listagem");
 const scrollButton = document.getElementById("scrollButton");
 const imageChat = document.getElementById("chat_image");
+const recordAudio = document.getElementById("recordAudio");
+const searchMessage = document.getElementById("icon_search_message");
 const nameUserLogged = document.getElementById("name_user_logged");
 const chatIdSelected = localStorage.getItem("chatIdSelected");
+const sendMessageButton = document.getElementById("sendMessageButton");
 
-nameUserLogged.innerText = userLogged.nome;
 if (!userLogged) {
   window.location.href = "/";
 }
@@ -31,4 +33,7 @@ export {
   imageChat,
   nameUserLogged,
   chatIdSelected,
+  searchMessage,
+  sendMessageButton,
+  recordAudio
 };

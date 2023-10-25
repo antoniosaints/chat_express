@@ -1,5 +1,10 @@
-import { deleteChatSelected, getChatsList, buttonScrollDown } from "../handlers/hooks.js";
+import {
+  deleteChatSelected,
+  getChatsList
+} from "../handlers/hooks.js";
+import { nameUserLogged, userLogged } from "../imports/main.js";
+
+nameUserLogged.innerText = userLogged.nome;
 
 deleteChatSelected();
-buttonScrollDown();
 getChatsList();

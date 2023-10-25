@@ -9,6 +9,8 @@ import {
   input,
   container,
   scrollButton,
+  sendMessageButton,
+  recordAudio
 } from "../imports/main.js";
 const showMessagesListagem = () => {
   leftContainer.classList.remove("w-full");
@@ -31,7 +33,6 @@ const getMessagesChat = async (id) => {
     `${HOST_DB}/messages?chat_id=${id}&_sort=id&_order=desc&_limit=50&_page=1`
   );
   const data = await DataReturn.json();
-  console.log(data);
   messages.innerHTML = "";
   showMessagesListagem();
   data.reverse();
@@ -42,7 +43,6 @@ const getMessagesChat = async (id) => {
 const getChatsList = async () => {
   const chats = await fetch(`${HOST_DB}/chats`);
   const data = await chats.json();
-  console.log(data);
   contacts.innerHTML = "";
   data.map((item) => {
     contacts.innerHTML += `<div
@@ -79,6 +79,7 @@ const getChatsList = async () => {
   const chatList = document.querySelectorAll(".chat_list_item");
   chatList.forEach((item) => {
     item.addEventListener("click", () => {
+      scrollButton.style.display = "none";
       getMessagesChat(item.dataset.chatid);
       localStorage.setItem("chatIdSelected", item.dataset.chatid);
       chatNameGroup.innerHTML = item.dataset.chatname;
@@ -86,33 +87,51 @@ const getChatsList = async () => {
     });
   });
 };
-const buttonScrollDown = () => {
-  container.addEventListener("scroll", () => {
-    const reference = container.scrollHeight - container.scrollTop - 400;
-    if (reference > 500) {
-      // Exibir o botão quando a barra de rolagem estiver a 100 pixels da parte superior
-      scrollButton.style.display = "block";
-    } else {
-      scrollButton.style.display = "none";
-    }
-  });
-};
-scrollButton.addEventListener("click", () => {
-  toLastMessage();
-});
-input.addEventListener("keyup", (e) => {
-  if (e.keyCode === 13) {
-    sendMessage();
-    saveMessage();
 
-    input.value = "";
+const getValuesAndSend = () => {
+  sendMessage();
+  saveMessage();
+
+  input.value = "";
+  alternateButtons();
+};
+
+container.addEventListener("scroll", () => {
+  const reference = container.scrollHeight - container.scrollTop - 400;
+  if (reference > 200) {
+    // Exibir o botão quando a barra de rolagem estiver a 100 pixels da parte superior
+    scrollButton.style.display = "block";
+  } else {
+    scrollButton.style.display = "none";
   }
 });
 
-export {
-  getMessagesChat,
-  getChatsList,
-  deleteChatSelected,
-  buttonScrollDown,
-  toLastMessage,
-};
+scrollButton.addEventListener("click", () => {
+  toLastMessage();
+});
+
+const alternateButtons = () => {
+  if (input.value === "") {
+    sendMessageButton.style.display = "none";
+    recordAudio.style.display = "block";
+  }else {
+    sendMessageButton.style.display = "block";
+    recordAudio.style.display = "none";
+  }
+}
+
+input.addEventListener("input", ({target}) => {
+  alternateButtons();
+})
+
+input.addEventListener("keyup", (e) => {
+  if (e.keyCode === 13) {
+    getValuesAndSend();
+  }
+});
+
+sendMessageButton.addEventListener("click", () => {
+  getValuesAndSend();
+});
+
+export { getMessagesChat, getChatsList, deleteChatSelected, toLastMessage };
