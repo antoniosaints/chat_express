@@ -1,4 +1,12 @@
-import { path, Server, createServer, express, fileURLToPath, join, cors } from "./importsExpress.js";
+import {
+  path,
+  Server,
+  createServer,
+  express,
+  fileURLToPath,
+  join,
+  cors,
+} from "./importsExpress.js";
 import { connection } from "../services/dbconnection.js";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -8,11 +16,10 @@ const app = express();
 const server = createServer(app);
 
 const io = new Server(server, {
-    cors: {
-      origin: "*",
-    },
-  });
-  
+  cors: {
+    origin: "*",
+  },
+});
 
 app.use(express.static(path.join("./src")));
 app.use(express.json());
@@ -64,4 +71,4 @@ io.on("connection", (socket) => {
   });
 });
 
-export {  server };
+export { server };
