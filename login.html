@@ -108,7 +108,7 @@
           password: password.value,
         };
 
-        const busca = await fetch("https://c02b-2804-2424-4000-3-8873-3570-a784-9c98.ngrok-free.app/auth", {
+        const busca = await fetch("/auth", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

@@ -30,7 +30,7 @@ const getMessagesChat = async (id) => {
     return;
   }
   const DataReturn = await fetch(
-    `${HOST_DB}/messages?chat_id=${id}&_sort=id&_order=desc&_limit=50&_page=1`
+    `${HOST_DB}/messages?chat_id=${id}&_limit=50$_page=1`
   );
   const data = await DataReturn.json();
   messages.innerHTML = "";

@@ -1,14 +1,14 @@
 {
   "chats": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Grupo Geral",
       "isGroup": true,
       "profile": "wppconect.png",
       "users": []
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "CHAT - Geral 2",
       "isGroup": true,
       "profile": "cas.jpeg",
@@ -22,7 +22,7 @@
       "nome": "ANTONIO COSTA DOS SANTOS",
       "user": 87,
       "data": "08/11/2023, 10:41:57",
-      "id": 1
+      "id": "1"
     },
     {
       "chat_id": "1",
@@ -30,7 +30,7 @@
       "nome": "ANTONIO COSTA DOS SANTOS",
       "user": 87,
       "data": "08/11/2023, 10:44:36",
-      "id": 2
+      "id": "2"
     },
     {
       "chat_id": "1",
@@ -38,7 +38,39 @@
       "nome": "ANTONIO COSTA DOS SANTOS",
       "user": 87,
       "data": "08/11/2023, 10:45:04",
-      "id": 3
+      "id": "3"
+    },
+    {
+      "id": "99de",
+      "chat_id": "2",
+      "text": "oi",
+      "nome": "ANTONIO COSTA DOS SANTOS",
+      "user": 87,
+      "data": "01/03/2024, 07:52:42"
+    },
+    {
+      "id": "9820",
+      "chat_id": "2",
+      "text": "oi",
+      "nome": "ANTONIO COSTA DOS SANTOS",
+      "user": 87,
+      "data": "01/03/2024, 07:53:30"
+    },
+    {
+      "id": "f1b7",
+      "chat_id": "2",
+      "text": "Bom dia",
+      "nome": "ANTONIO COSTA DOS SANTOS",
+      "user": 87,
+      "data": "01/03/2024, 08:01:21"
+    },
+    {
+      "id": "7e12",
+      "chat_id": "2",
+      "text": "Bom dia",
+      "nome": "ANTONIO COSTA DOS SANTOS",
+      "user": 87,
+      "data": "01/03/2024, 08:04:22"
     }
   ],
   "chats_user": [
@@ -46,7 +78,8 @@
       "user_id": 87,
       "chats": [
         1
-      ]
+      ],
+      "id": "e3ce"
     }
   ]
 }
